@@ -8,15 +8,14 @@ html
         script(type="text/javascript" src="http://www.google.com/jsapi")
         script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js")
 
-        script(type="text/javascript" src="/public/addressmaps.js")
+        script(type="text/javascript" src="/addressmaps.js")
         script(type="text/javascript").
             $(document).ready(function() {
                 $("#button").click(function() {
                     var address = $("#address").val();
-                    //$.post("localhost:3000/addressmaps/history/", {address: address}, function(data) {
-                        console.log("success");
+                    $.post("addressmaps/history/", {address: address}, function(data) {
                         drawMap(address);
-                    //});
+                    });
                 });
             });
         title 調べたい住所のマップを表示!

@@ -19,13 +19,12 @@ route.get('/history', function(req, res) {
 //save address
 route.post('/history', function(req, res) {
     var address = req.body.address;
-    console.log(address);
-    /*
-    history.saveAddress(address, function() {
-        return res.redirect('/');
+    history.saveAddress(address, function(err, result) {
+        if (err) {
+            return res.send(err);
+        }
+        return res.json(result);
     });
-    */
-   return;
 });
 
 module.exports = route;
