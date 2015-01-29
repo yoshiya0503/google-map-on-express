@@ -1,0 +1,18 @@
+html
+    a(href="/addressmaps/")
+        検索へ戻る
+    table(border=1)
+        caption
+            検索履歴
+        tr
+            th
+                時間
+            th
+                住所
+        for history in historys
+            tr
+                td
+                    #{history.time}
+                td
+                    #{history.address}
+

@@ -13,7 +13,9 @@ route.get('/', function(req, res) {
 });
 
 route.get('/history', function(req, res) {
-    return res.render('history.jade');
+    history.getHistorys(function(err, result) {
+        return res.render('history.jade', {historys: result});
+    });
 });
 
 //save address
